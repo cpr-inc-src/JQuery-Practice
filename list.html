@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Labs - Design Studio</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Labs - Design Studio">
+	<meta name="keywords" content="lab, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,600" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader">
+			<img src="img/logo.png" alt="">
+			<h2>Loading.....</h2>
+		</div>
+	</div>
+
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="logo">
+			<img src="https://cpr-solution.jp/wp/wp-content/uploads/tcd-w/logo.png?1590029850" alt=""><!-- Logo -->
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Page header -->
+	<div class="page-top-section">
+		<div class="overlay"></div>
+		<div class="container text-right">
+			<div class="page-info">
+				<h2>チケット予約</h2>
+			</div>
+		</div>
+	</div>
+	<!-- Page header end-->
+
+
+	<!-- page section -->
+	<div class="page-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- Single element -->
+					<div class="element">
+						<h4>お客様入力フォーム</h4>
+						<div class="row">
+							<!-- Progress bars -->
+							<div class="col-md-6">
+								<div class="single-progress-item">
+									<!-- 下記の入力によりパーセントを変更してください。-->
+									<p>progress</p>
+									<div class="progress-bar-style" data-progress="50"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="element">
+							<div class="col-md-12">
+								<form class="form-class" id="con_form">
+									<div class="row">
+										<div class="col-sm-10">
+											<p>苗字は5文字以内で入力してください。</p>
+											<p>苗字</p>
+											<input type="text" name="" placeholder="株式会社">
+										</div>
+										<div class="col-sm-10">
+											<p>名前</p>
+											<input type="text" name="" placeholder="CPR">
+										</div>
+										<div class="col-sm-10">
+											<p>メールアドレス</p>
+											<input type="text" name="" placeholder="sample.docomo.ne.jp">
+										</div>
+										<div class="col-sm-10">
+											<p>郵便番号</p>
+											<input type="text" name="" placeholder="331-2200">
+										</div>
+										<div class="col-sm-10">
+											<!-- APIから取得した都道府県で動的に作成してください。-->
+											<div>
+												<p>都道府県</p>
+												<select class="selectpicker">
+													<option value="1">東京</option>
+													<option value="2">埼玉</option>
+													<option value="3">千葉</option>
+													<option value="4">神奈川</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-10">
+											<!-- 都道府県を選択した際にAPIから市町村を取得してください。-->
+											<div>
+												<br>
+												<p>市町村</p>
+												<select class="selectpicker">
+													<option value="1">北区</option>
+													<option value="2">港区</option>
+													<option value="3">江戸川区</option>
+													<option value="4">渋谷区</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-12 center">
+											<br>
+											<button class="submit">send</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- page section end-->
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+	</footer>
+	<!-- Footer section end -->
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/magnific-popup.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/circle-progress.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+</body>
+</html>
