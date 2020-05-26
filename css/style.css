@@ -31,7 +31,8 @@ h6 {
 }
 
 h2 {
-	font-size: 36px;
+	font-size: 48px;
+	font-weight: bold;
 }
 
 p {
@@ -41,11 +42,25 @@ p {
 	font-family: "Roboto", sans-serif;
 }
 
+a {
+	font-size: 15px;a
+	color: #6c6e7e;
+	line-height: 30px;
+	font-family: "Roboto", sans-serif;
+	transition: all 0.4s ease 0s;
+}
+
 a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #0b1033;
+	color: #82d617; 
+}
+
+.val {
+	font-size: 12px;
+	color: #ff0000;
+	margin-left: 12px;
 }
 
 li,
@@ -409,7 +424,7 @@ ul {
 	left: 0;
 	top: 0;
 	z-index: 3;
-	background-image: url("../img/overlay.png");
+	background-image: url("../img/overlay.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -766,31 +781,59 @@ ul {
 	z-index: -1;
 }
 
-.form-class input[type="text"] {
+.form-class input[type="text"],
+.form-class input[type="email"],
+.form-class input[type="number"] {
 	width: 100%;
 	margin-bottom: 26px;
-	border: none;
-	background: #f6edfb;
-	padding: 17px 20px;
+	padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+	border: 1px solid #ccc;
+	transition: all 0.4s ease 0s;
+}
+
+.form-class input[type="text"]:hover,
+.form-class input[type="email"]:hover,
+.form-class input[type="number"]:hover {
+	border: 1px solid #82d617; 
+    z-index: 10;
+	outline: 0;
+	transition: all 0.4s ease 0s;
 }
 
 .form-class input[type="text"]:focus,
-.form-class input[type="text"]:hover {
-	outline: none;
+.form-class input[type="email"]:focus,
+.form-class input[type="number"]:focus {
+	border: 2px solid #82d617; 
+    z-index: 10;
+	outline: 0;
+	transition: all 0.4s ease 0s;
 }
 
 .form-class textarea {
 	width: 100%;
 	margin-bottom: 40px;
-	border: none;
-	background: #f6edfb;
-	padding: 15px 20px;
+	padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 	height: 260px;
+	transition: all 0.4s ease 0s;
 }
 
-.form-class textarea:focus,
 .form-class textarea:hover {
-	outline: none;
+	border: 1px solid #82d617; 
+    z-index: 10;
+	outline: 0;
+	transition: all 0.4s ease 0s;
+}
+
+.form-class textarea:focus {
+	border: 2px solid #82d617; 
+    z-index: 10;
+	outline: 0;
+	transition: all 0.4s ease 0s;
 }
 
 .form-class ::-webkit-input-placeholder {
@@ -807,6 +850,7 @@ ul {
 
 .form-class ::placeholder {
 	font-style: italic;
+	color: #ccc;
 }
 
 .form-class :-ms-input-placeholder {
@@ -841,12 +885,12 @@ ul {
 	Footer section
 --------------------------*/
 .footer-section {
-	background: #220c3b;
+	background: #82d617;
 	text-align: center;
 }
 
 .footer-section h2 {
-	color: #6a23b5;
+	color: #ffffff;
 	font-size: 14px;
 	padding: 18px 0;
 }
@@ -861,7 +905,7 @@ ul {
 .page-top-section {
 	position: relative;
 	height: 405px;
-	background: #6a23b5;
+	background: #ffffff;
 }
 
 .page-top-section .container {
@@ -871,7 +915,7 @@ ul {
 
 .page-top-section .page-info {
 	display: inline-block;
-	padding-top: 200px;
+	padding-top: 230px;
 }
 
 .page-top-section .page-info h2 {
@@ -1331,7 +1375,7 @@ ul {
 
 /*===  Progress Bar Element ===*/
 .single-progress-item {
-	margin-bottom: 15px;
+	margin: 40px 0 0;
 	position: relative;
 }
 
@@ -1355,7 +1399,7 @@ ul {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: #2be6ab;
+	background: #82d617;
 }
 
 .bar-inner span {
@@ -1484,6 +1528,25 @@ ul {
 	font-size: 16px;
 	font-weight: 500;
 }
+
+
+.adress {
+	margin-top: 26px;
+}
+
+.submit {
+	display: inline-block;
+	padding: 10px 40px;
+	border-radius: 25px;
+	text-decoration: none;
+	color: #FFF;
+	background-color: #82d617;
+	transition: all 0.4s ease 0s;
+}
+
+.submit:hover {
+	opacity: 70%;
+  }
 
 
 
