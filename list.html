@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-	<title>Labs - Design Studio</title>
+	<title>CPRチケット予約</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Labs - Design Studio">
 	<meta name="keywords" content="lab, onepage, creative, html">
@@ -31,7 +31,7 @@
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader">
-			<img src="img/logo.png" alt="">
+			<img src="img/logo.png" alt="" width="250" height="250">
 			<h2>Loading.....</h2>
 		</div>
 	</div>
@@ -40,7 +40,7 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-			<img src="https://cpr-solution.jp/wp/wp-content/uploads/tcd-w/logo.png?1590029850" alt=""><!-- Logo -->
+			<img src="img/logo.png" alt=""  width="100" height="100"><!-- Logo -->
 		</div>
 	</header>
 	<!-- Header section end -->
@@ -49,7 +49,7 @@
 	<!-- Page header -->
 	<div class="page-top-section">
 		<div class="overlay"></div>
-		<div class="container text-right">
+		<div class="container text-center">
 			<div class="page-info">
 				<h2>チケット予約</h2>
 			</div>
@@ -62,78 +62,113 @@
 	<div class="page-section spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
 
 					<!-- Single element -->
+					<div class="element text-center">
+						<h4>チケット予約フォーム</h4>
+					</div>
 					<div class="element">
-						<h4>お客様入力フォーム</h4>
-						<div class="row">
-							<!-- Progress bars -->
-							<div class="col-md-6">
-								<div class="single-progress-item">
-									<!-- 下記の入力によりパーセントを変更してください。-->
-									<p>progress</p>
-									<div class="progress-bar-style" data-progress="50"></div>
+						<form class="form-class" id="conForm">
+							<div class="row">
+								<div class="col-sm-12">
+									<p>お名前(姓)<span id="lastNameError" class="val"></span></p>
+									<input type="text" name="lastName" placeholder="山田" data-error_placement="#lastNameError">
+								</div>
+								<div class="col-sm-12">
+									<p>お名前(名)<span id="firstNameError" class="val"></span></p>
+									<input type="text" name="firstName" placeholder="太郎" data-error_placement="#firstNameError">
+								</div>
+								<div class="col-sm-12">
+									<p>メールアドレス<span id="emailError" class="val"></span></p>
+									<input type="email" name="email" placeholder="example@mail.com" data-error_placement="#emailError">
+								</div>
+								<div class="col-sm-12">
+									<p>郵便番号(7桁)<span id="postalCodeError" class="val"></span></p>
+									<input type="text" minlength="7" maxlength="7" name="postalCode" placeholder="1000001" data-error_placement="#postalCodeError" style="width: 220px;">
+								</div>
+								<div class="col-sm-12">
+									<!-- APIから取得した都道府県で動的に作成してください。-->
+									<div>
+										<p>都道府県<span id="prefError" class="val"></span></p>
+										<select name="pref" class="selectpicker" data-error_placement="#prefError">
+											<option value="" selected>都道府県</option>
+											<option value="1">北海道</option>
+											<option value="2">青森県</option>
+											<option value="3">岩手県</option>
+											<option value="4">宮城県</option>
+											<option value="5">秋田県</option>
+											<option value="6">山形県</option>
+											<option value="7">福島県</option>
+											<option value="8">茨城県</option>
+											<option value="9">栃木県</option>
+											<option value="10">群馬県</option>
+											<option value="11">埼玉県</option>
+											<option value="12">千葉県</option>
+											<option value="13">東京都</option>
+											<option value="14">神奈川県</option>
+											<option value="15">新潟県</option>
+											<option value="16">富山県</option>
+											<option value="17">石川県</option>
+											<option value="18">福井県</option>
+											<option value="19">山梨県</option>
+											<option value="20">長野県</option>
+											<option value="21">岐阜県</option>
+											<option value="22">静岡県</option>
+											<option value="23">愛知県</option>
+											<option value="24">三重県</option>
+											<option value="25">滋賀県</option>
+											<option value="26">京都府</option>
+											<option value="27">大阪府</option>
+											<option value="28">兵庫県</option>
+											<option value="29">奈良県</option>
+											<option value="30">和歌山県</option>
+											<option value="31">鳥取県</option>
+											<option value="32">島根県</option>
+											<option value="33">岡山県</option>
+											<option value="34">広島県</option>
+											<option value="35">山口県</option>
+											<option value="36">徳島県</option>
+											<option value="37">香川県</option>
+											<option value="38">愛媛県</option>
+											<option value="39">高知県</option>
+											<option value="40">福岡県</option>
+											<option value="41">佐賀県</option>
+											<option value="42">長崎県</option>
+											<option value="43">熊本県</option>
+											<option value="44">大分県</option>
+											<option value="45">宮崎県</option>
+											<option value="46">鹿児島県</option>
+											<option value="47">沖縄県</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-12 adress">
+									<p>以降の住所<span id="adressError" class="val"></span></p>
+									<input id="adress" type="text" name="adress" placeholder="千代田区千代田1-1" data-error_placement="#adressError">
+								</div>
+								<!-- Progress bars -->
+								<div class="col-sm-12">
+									<div class="single-progress-item">
+										<!-- 下記の入力によりパーセントを変更してください。-->
+										<div class="progress-bar-style" data-progress="15"></div>
+									</div>
+									<div class="col-sm-6">
+										<p>未入力</p>
+									</div>
+									<div class="col-sm-6">
+										<p class="text-right">入力完了</p>
+									</div>
+								</div>
+								<div class="col-sm-12 text-center">
+									<button type="submit" class="submit">送信する</button>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="element">
-							<div class="col-md-12">
-								<form class="form-class" id="con_form">
-									<div class="row">
-										<div class="col-sm-10">
-											<p>苗字は5文字以内で入力してください。</p>
-											<p>苗字</p>
-											<input type="text" name="" placeholder="株式会社">
-										</div>
-										<div class="col-sm-10">
-											<p>名前</p>
-											<input type="text" name="" placeholder="CPR">
-										</div>
-										<div class="col-sm-10">
-											<p>メールアドレス</p>
-											<input type="text" name="" placeholder="sample.docomo.ne.jp">
-										</div>
-										<div class="col-sm-10">
-											<p>郵便番号</p>
-											<input type="text" name="" placeholder="331-2200">
-										</div>
-										<div class="col-sm-10">
-											<!-- APIから取得した都道府県で動的に作成してください。-->
-											<div>
-												<p>都道府県</p>
-												<select class="selectpicker">
-													<option value="1">東京</option>
-													<option value="2">埼玉</option>
-													<option value="3">千葉</option>
-													<option value="4">神奈川</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-sm-10">
-											<!-- 都道府県を選択した際にAPIから市町村を取得してください。-->
-											<div>
-												<br>
-												<p>市町村</p>
-												<select class="selectpicker">
-													<option value="1">北区</option>
-													<option value="2">港区</option>
-													<option value="3">江戸川区</option>
-													<option value="4">渋谷区</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-sm-12 center">
-											<br>
-											<button class="submit">send</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
+				<div class="col-md-2"></div>
 			</div>
 		</div>
 	</div>
@@ -142,7 +177,7 @@
 
 	<!-- Footer section -->
 	<footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+		<h2>2020 All rights reserved. CPR inc.</h2>
 	</footer>
 	<!-- Footer section end -->
 
@@ -150,11 +185,72 @@
 
 	<!--====== Javascripts & Jquery ======-->
 	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/magnific-popup.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+	<script>
+		$('form').validate({
+			rules: {
+				lastName: {
+					required: true,
+					maxlength: 5
+				},
+				firstName: {
+					required: true,
+					maxlength: 5
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				postalCode: {
+					required: true,
+					number: true,
+					minlength: 7,
+					maxlength: 7
+				},
+				pref: {
+					required: true
+				},
+				adress: {
+					required: true
+				}
+			},
+			messages: {
+				lastName: {
+					required: '※お名前(姓)を入力してください。',
+					maxlength: '※お名前(姓)は5文字以内で入力してください。'
+				},
+				firstName: {
+					required: '※お名前(名)を入力してください。',
+					maxlength: '※お名前(名)は5文字以内で入力してください。'
+				},
+				email: {
+					required: '※メールアドレスを入力してください。',
+					email: '※正しいメール形式で入力してください。'
+				},
+				postalCode: {
+					required: '※郵便番号を入力してください。',
+					number: '※-(ハイフン)なしの半角数字7桁で入力してください。',
+					minlength: '※-(ハイフン)なしの半角数字7桁で入力してください。',
+					maxlength: '※-(ハイフン)なしの半角数字7桁で入力してください。'
+				},
+				pref: {
+					required: '※都道府県を選択してください。'
+				},
+				adress: {
+					required: '※住所を入力してください。'
+				}
+			},
+			errorPlacement: function(error, element){
+				// data-error_placementで指定された要素に追加
+				error.appendTo(element.data('error_placement'));
+			}
+		});	
+	</script>
 </body>
 </html>
