@@ -161,7 +161,7 @@
 								<div class="col-sm-12">
 									<div class="single-progress-item">
 										<!-- 下記の入力によりパーセントを変更してください。-->
-										<div class="progress-bar-style" data-progress="15"></div>
+										<div class="progress-bar-style" data-progress="20"></div>
 									</div>
 									<div class="col-sm-6">
 										<p>未入力</p>
@@ -262,9 +262,20 @@
 			}
 		});
 
-		$('.val').css('color', '#00ff00');
+		$('form').submit(function () {
+			$(this).attr('action', 'done.html');
+		});
 
-
+		// input,selectの値が変更されたとき、
+		$('input', 'select').on('change', function () {
+			// vに 100% / 項目数 を代入
+			var v = 100 / 6;
+			// input,selectがclass='valid'だったら、
+			if ($('input', 'select').hasClass('valid')) {
+				// progress-bar-styleのdeta-progressに[v]を加算
+				$('.progress-bar-style').data('progress', ++v);
+			}
+		});
 	</script>
 </body>
 
