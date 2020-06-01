@@ -160,8 +160,7 @@
 								<!-- Progress bars -->
 								<div class="col-sm-12">
 									<div class="single-progress-item">
-										<!-- 下記の入力によりパーセントを変更してください。-->
-										<div class="progress-bar-style" data-progress="20"></div>
+										<div class="progress-bar-style" data-progress="0"></div>
 									</div>
 									<div class="col-sm-6">
 										<p>未入力</p>
@@ -219,7 +218,7 @@
 				},
 				zip: {
 					required: true,
-					number: true,
+					digits: true,
 					minlength: 7,
 					maxlength: 7
 				},
@@ -245,7 +244,7 @@
 				},
 				zip: {
 					required: '※郵便番号を入力してください。',
-					number: '※-(ハイフン)なしの半角数字7桁で入力してください。',
+					digits: '※-(ハイフン)なしの半角数字7桁で入力してください。',
 					minlength: '※-(ハイフン)なしの半角数字7桁で入力してください。',
 					maxlength: '※-(ハイフン)なしの半角数字7桁で入力してください。'
 				},
@@ -260,21 +259,31 @@
 				// data-error_placementで指定された要素に追加
 				error.appendTo(element.data('error_placement'));
 			}
+
 		});
 
 		$('form').submit(function () {
 			$(this).attr('action', 'done.html');
 		});
 
-		// input,selectの値が変更されたとき、
-		$('input', 'select').on('change', function () {
-			// vに 100% / 項目数 を代入
+		$('input[name="zip"]').blur(function () {
+			$('select,input[name="address2"]').valid();
+			var cnt = $('.valid').size();
 			var v = 100 / 6;
-			// input,selectがclass='valid'だったら、
-			if ($('input', 'select').hasClass('valid')) {
-				// progress-bar-styleのdeta-progressに[v]を加算
-				$('.progress-bar-style').data('progress', ++v);
-			}
+			var afterValue = v * cnt;
+			$('.progress-bar-style').data("progress", + afterValue);
+			$('.progress-bar-style').empty();
+			progressbar();
+		});
+
+		$('input,select').on('change', function () {
+			$(this).valid();
+			var cnt = $('.valid').size();
+			var v = 100 / 6;
+			var afterValue = v * cnt;
+			$('.progress-bar-style').data("progress", + afterValue);
+			$('.progress-bar-style').empty();
+			progressbar();
 		});
 	</script>
 </body>
