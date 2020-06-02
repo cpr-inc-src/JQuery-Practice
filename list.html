@@ -259,31 +259,28 @@
 				// data-error_placementで指定された要素に追加
 				error.appendTo(element.data('error_placement'));
 			}
-
 		});
 
 		$('form').submit(function () {
 			$(this).attr('action', 'done.html');
 		});
 
+		function getProgress() {
+			var v = 100 / 6;
+			var cnt = $('.valid').length;
+			var afterValue = v * cnt;
+			$('.progress-bar-style').data("progress", + afterValue).empty();
+			progressbar();
+		};
+
 		$('input[name="zip"]').blur(function () {
 			$('select,input[name="address2"]').valid();
-			var cnt = $('.valid').size();
-			var v = 100 / 6;
-			var afterValue = v * cnt;
-			$('.progress-bar-style').data("progress", + afterValue);
-			$('.progress-bar-style').empty();
-			progressbar();
+			getProgress();
 		});
 
 		$('input,select').on('change', function () {
 			$(this).valid();
-			var cnt = $('.valid').size();
-			var v = 100 / 6;
-			var afterValue = v * cnt;
-			$('.progress-bar-style').data("progress", + afterValue);
-			$('.progress-bar-style').empty();
-			progressbar();
+			getProgress();
 		});
 	</script>
 </body>
